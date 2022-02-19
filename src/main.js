@@ -7,9 +7,17 @@ function index() {
                   .catch(error=> console.log(error))
 }
 
-function create(body) {}
+function create(body) {
+        axios.post(`${BASE_URL}/constellations`, body)
+               .then(Response=> console.log(Response.data))
+                .catch(err=> console.log(err))
+}
 
-function show(id) {}
+function show(id) {
+        axios.get(`${BASE_URL}/constellations/${id}`)
+              .then(Response=> console.log(Response.data))
+                .catch(err=> console.log(err))
+}
 
 function update(id, body) {}
 
