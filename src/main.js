@@ -20,13 +20,18 @@ function show(id) {
 }
 
 function update(id, body) {
-        axios.put(`${BASE_URL}constellations/${id}`)
+        axios.put(`${BASE_URL}/constellations/${id}`, body)
               .then(Response=> console.log(Response.data))
                 .catch(err=> console.log(err))
-                
+
 }
 
-function destroy(id) {}
+function destroy(id) {
+        axios.delete(`${BASE_URL}/constellations/${id}`)
+              .then(Response=> console.log(Response.data))
+               .catch(err=> console.log(err))
+
+}
 
 module.exports = {
   index,
