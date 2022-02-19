@@ -19,7 +19,12 @@ function show(id) {
                 .catch(err=> console.log(err))
 }
 
-function update(id, body) {}
+function update(id, body) {
+        axios.put(`${BASE_URL}constellations/${id}`)
+              .then(Response=> console.log(Response.data))
+                .catch(err=> console.log(err))
+                
+}
 
 function destroy(id) {}
 
