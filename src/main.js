@@ -1,7 +1,11 @@
 const axios = require("../utils/axios");
 const BASE_URL = "http://localhost:5000";
 
-function index() {}
+function index() {
+         axios.get(`${BASE_URL}/constellations`)
+                .then(Response=> console.log(Response.data))
+                  .catch(error=> console.log(error))
+}
 
 function create(body) {}
 
