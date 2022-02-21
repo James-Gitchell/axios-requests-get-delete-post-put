@@ -2,35 +2,36 @@ const axios = require("../utils/axios");
 const BASE_URL = "http://localhost:5000";
 
 function index() {
-         axios.get(`${BASE_URL}/constellations`)
-                .then(Response=> console.log(Response.data))
-                  .catch(error=> console.log(error))
+  axios.get(`${BASE_URL}/constellations`)
+         .then(response=> console.log(response.data))
+           .catch(err=> console.log(err))
+       
 }
 
 function create(body) {
         axios.post(`${BASE_URL}/constellations`, body)
-               .then(Response=> console.log(Response.data))
-                .catch(err=> console.log(err))
+               .then(response=> console.log(response))
+                 .catch(err=> console.log(err))
+
 }
 
 function show(id) {
-        axios.get(`${BASE_URL}/constellations/${id}`)
-              .then(Response=> console.log(Response.data))
-                .catch(err=> console.log(err))
+         axios.get(`${BASE_URL}/constellations/${id}`)
+                .then(response=> console.log(response))
+                   .catch(err=> console.log(err))
 }
 
 function update(id, body) {
-        axios.put(`${BASE_URL}/constellations/${id}`, body)
-              .then(Response=> console.log(Response.data))
-                .catch(err=> console.log(err))
-
+          axios.put(`${BASE_URL}/constellations/${id}`, body)
+                .then(response=> console.log(response))
+                  .catch(err=> console.log(err))
 }
 
 function destroy(id) {
-        axios.delete(`${BASE_URL}/constellations/${id}`)
-              .then(Response=> console.log(Response.data))
-               .catch(err=> console.log(err))
-
+        axios.delete(`{BASE_URL}.constellations/${id}`)
+              .then(response=> console.log(response))
+                .catch(err=> console.log(err));
+                
 }
 
 module.exports = {
